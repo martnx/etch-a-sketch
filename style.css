@@ -1,5 +1,7 @@
 *{
-
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
 }
 .main-container{
     border: 1px solid black;
@@ -14,21 +16,27 @@
     margin: 0 auto;
     border: 16px solid rgb(192, 25, 25);
     height: 600px;
-    width: 600px;
+    width: 605px;
 
     display: flex;
-    align-content: flex-start;
+    flex-direction: row;
 
 }
-.div-col{
-    background-color: rgb(185, 183, 183);
-    width: 32px;
-    height: 32px;
-    border: 0.1px solid black;
 
-    /* Flexbox  */
+.row {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+
 }
-.div-col:hover{
+
+.column {
+    background-color: rgb(189, 189, 189);
+    border: 1px solid black;
+    flex: 1; 
+    
+}
+
+.column:hover {
     background-color: gray;
 }
