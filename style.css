@@ -37,9 +37,8 @@
 
 .column {
     background-color: rgb(189, 189, 189);
-    border: 1px solid black;
+    border: 0.5px solid rgb(106, 106, 106);
     flex: 1; 
-    
 }
 
 .btn-container{
@@ -47,14 +46,13 @@
     width: 200px;
     height: 400px;
     padding: 8px;
-    
 }
 
 .btn-container .input-size {
     padding: 8px;
 }
 
-.btn-container .change-size {
+.btn-container .change-btn {
     padding: 8px;
 }
 
