@@ -6,17 +6,22 @@
 .main-container{
     border: 1px solid black;
     padding: 16px;
+
+    display: flex;
+    flex-direction: row-reverse;
 }
 
-.main-container h1{
+.header{
     text-align: center;
+    padding: 16px;
+    font-size: 32px;
 }
 
 .container{
-    margin: 0 auto;
+    margin-left: auto;
     border: 16px solid rgb(192, 25, 25);
-    height: 600px;
-    width: 605px;
+    height: 500px;
+    width: 500px;
 
     display: flex;
     flex-direction: row;
@@ -37,6 +42,26 @@
     
 }
 
-.column:hover {
-    background-color: gray;
+.btn-container{
+    border: 1px solid black;
+    width: 200px;
+    height: 400px;
+    padding: 8px;
+    
+}
+
+.btn-container .input-size {
+    padding: 8px;
+}
+
+.btn-container .change-size {
+    padding: 8px;
+}
+
+.btn-container .clr-btn {
+    padding: 8px;
+}
+
+.btn-container .reset-btn {
+    padding: 8px;
 }

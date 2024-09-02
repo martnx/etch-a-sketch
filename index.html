@@ -8,13 +8,19 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-
+    <div class="header">Etch-A-Sketch</div>
     <div class="main-container">
-        <h1>Etch-A-Sketch</h1>
         <!-- The rest of the code of this is on script.js file -->
         <div class="container">
         </div>
-        <button class="reset-btn">Reset</button>
+        <div class="btn-container">
+            <input class="input-size">
+            <button class="change-size">Change Size</button>
+            <button class="clr-btn">Clear Sketchpad</button> <br>
+            <input type="checkbox" class="input" name="randomColor" value="random">
+            <label for="random">Random Color</label>
+            <button class="reset-btn">Reset Sketchpad</button>
+        </div>
     </div>
     
     <script src="script.js"></script>

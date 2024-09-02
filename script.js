@@ -1,5 +1,5 @@
 const container = document.querySelector(".container");
-let size = 64;
+let size = 20;
 //Row and column loops
 for(let i = 0; i < size; i++){
     console.log(i);
@@ -12,20 +12,30 @@ for(let i = 0; i < size; i++){
         column.className = 'column';
         row.appendChild(column);  
     }
-}
+}   
 
 //Make eventlistener for each column
-container.addEventListener("mousemove", e =>{
+container.addEventListener("mouseover", e =>{
     const target  = e.target;
-    console.log(e.target);
-    target.setAttribute("style", "background: black;");
-});
+    if(e.target.matches(".column")){
+        target.style.backgroundColor = "black";
+    }
 
-const resetButton = document.querySelector('.reset-btn');
-resetButton.addEventListener("click", () =>{
-    column.forEach(element => {
-        column.setAttribute("style", "background-color: red");
-    console.log("click");
-    });
+    //hold the shift to clear the div
+    if(e.shiftKey)target.setAttribute("style", "background: rgb(189, 189, 189);");
     
 });
+
+//Resetting all the colored div
+const resetButton = document.querySelector('.reset-btn');
+const allColumn = document.querySelectorAll(".column");
+resetButton.addEventListener("click", () =>{
+    column.style.backgroundColor = "blue";
+    for(const columns of allColumn){
+        columns.style.backgroundColor = "rgb(189, 189, 189)";
+    }
+});
+
+
+
+
