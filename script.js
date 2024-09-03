@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+createGrid();
 //Alert checkpoint
 // function alertInput() {
 //     const inputSize = window.prompt("What size of pad? 1 - 100 only", 16);
@@ -69,7 +70,7 @@ inputBtn.addEventListener("click", () =>{
     //Getting the input value
     const inputValue = document.querySelector(".input-size").value;
     //Checking if the value is valid 1 - 100 only!
-    if(inputValue > 0 || inputValue > 100){
+    if(inputValue > 0 && inputValue <= 100){
         createGrid(inputValue);
     }else{
         alert("Input valid value!");
