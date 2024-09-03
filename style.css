@@ -37,7 +37,7 @@
 
 .column {
     background-color: rgb(189, 189, 189);
-    border: 0.5px solid rgb(106, 106, 106);
+    border: 0.2px solid rgb(106, 106, 106);
     flex: 1; 
 }
 
