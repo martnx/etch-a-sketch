@@ -1,5 +1,15 @@
 const container = document.querySelector(".container");
-
+//Alert checkpoint
+function alertInput() {
+    const inputSize = window.prompt("What size of pad? 1 - 100 only", 16);
+    if(inputSize < 101){
+        createGrid(inputSize);
+    }
+    else{
+    alertInput();
+    }
+};
+alertInput();
 // let size = 16;
 //Row and column loops
 function createGrid(size){
@@ -10,7 +20,7 @@ function createGrid(size){
         row.className = 'row';
         container.appendChild(row);
         //Column
-        for(let j = 0; j < size; j++){
+        for(let j = 1; j < size; j++){
             var column = document.createElement('div');
             column.className = 'column';
             row.appendChild(column);  
@@ -34,8 +44,7 @@ container.addEventListener("mouseover", e =>{
 const changeButton = document.querySelector(".change-btn");
 changeButton.addEventListener("click", () => {
     const inputSize = document.querySelector(".input-size").value;
-    console.log(inputSize);
-    // createGrid(inputSize);
+    createGrid(inputSize);
 });
 
 //Resetting all the colored div
@@ -47,30 +56,13 @@ resetButton.addEventListener("click", () =>{
     }
 });
 
-//Alert checkpoint
-function alertInput() {
-    const inputSize = window.prompt("What size of pad? 1 - 100 only");
-    if(inputSize < 101){
-        createGrid(inputSize);
-    }
-    else{
-    alertInput();
-    }
-};
-alertInput();
+const inputText = document.querySelector("input-size");
+const inputBtn = document.querySelector(".change-btn");
+inputBtn.addEventListener("click", () =>{
+    const inputValue = document.querySelector(".input-size").value;
+    createGrid(inputValue);
+});
 
-
-
-
-// inputBtn.addEventListener("click", () =>{
-//     const inputValue = document.querySelector(".input-size");
-//     size = inputValue.value;
-//     console.log(size);
-// });
-
-// $(".input-btn").click(function() {
-//     console.log("JQuery is clicked!");
-// });
 
 
 
