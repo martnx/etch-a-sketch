@@ -1,5 +1,34 @@
 const container = document.querySelector(".container");
 createGrid();
+//Main variable of color
+let returnValue = "#000000";
+//Color Form
+const prefColor = document.querySelector(".chooseColor");  //Get the value of input color
+const pickColorRadio = document.querySelector(".pickColorRadio");
+
+// prefColor.addEventListener("click", e =>{
+//     // createGrid();
+// })
+
+prefColor.addEventListener("input",  e => {
+    // createGrid();
+    console.log(prefColor.value);
+    returnValue = prefColor.value;
+    pickColorRadio.checked = true;
+});
+
+pickColorRadio.addEventListener("click", e =>{
+    console.log("radioPickColor is clicked!");
+    createGrid();
+});
+
+const randomColorRadio = document.querySelector(".randomRadio");
+
+
+
+
+
+
 //Alert checkpoint
 // function alertInput() {
 //     const inputSize = window.prompt("What size of pad? 1 - 100 only", 16);
@@ -39,7 +68,7 @@ function createGrid(size = 16){
 container.addEventListener("mouseover", e =>{
     const target  = e.target;
     if(e.target.matches(".column")){
-        target.style.backgroundColor = "black";
+        target.style.backgroundColor = returnValue;
     }
     //hold the shift to clear the div
     if(e.shiftKey)target.setAttribute("style", "background: rgb(189, 189, 189);");
@@ -58,7 +87,7 @@ const resetButton = document.querySelector('.reset-btn');
 const allColumn = document.querySelectorAll(".column");
 resetButton.addEventListener("click", () =>{
     for(const columns of allColumn){
-        columns.style.backgroundColor = "rgb(189, 189, 189)";
+        columns.style.backgroundColor = "rgb(198, 198, 198)";
     }
 });
 
@@ -78,16 +107,4 @@ inputBtn.addEventListener("click", () =>{
     }
 });
 
-//fix the random button here
-const randomBtn = document.querySelector(".random-checkbox");
-randomBtn.onclick = function click(){
-    console.log("function clicked");
-}
-randomBtn.addEventListener("change", e =>{
-     if(e.checked){
-        console.log("Checkbox is checked");
-     }
-     else{
-        console.log("unchecked");
-     }
-});
+
