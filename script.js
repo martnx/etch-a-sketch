@@ -1,47 +1,22 @@
 const container = document.querySelector(".container");
 createGrid();
 
-
-// pickColorRadio.addEventListener("click", e =>{
-//     console.log("radioPickColor is clicked!");
-//     createGrid();
-// });
-
-const randomColorRadio = document.querySelector("#randomRadio");
-
-
-//I will actionlistener on form here
 const formContainer = document.querySelector(".switchColor-container");
 const prefColor = document.querySelector(".chooseColor");
+let returnColor = prefColor.value
 prefColor.addEventListener("input", e => { //Get the value of input color
-    // createGrid();
     console.log(prefColor.value);
     pickColorRadio.checked = true;
 });
-formContainer.addEventListener("click", e =>{
-    let target = e.target
-    console.log(target.id);
-    switch(target.id){
-        case 'pickColorRadio':
-            console.log("pick color radio is clicked using switch statement");
-              
 
+const randomColorRadio = document.querySelector("#randomRadio");
 
-            break;
-    }
-    createGrid();
+randomColorRadio.addEventListener("click", e =>{
+    console.log("random radio buttton is clicked");
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    returnColor = "#"+ randomColor;
+    console.log(returnColor);
 });
-
-//Main variable of color
-let returnValue = "#000000";
-
-//Color Form
-const pickColorRadio = document.querySelector("#pickColorRadio");
-
-// prefColor.addEventListener("click", e =>{
-//     // createGrid();
-// })
-
 
 
 //Alert checkpoint
@@ -83,7 +58,7 @@ function createGrid(size = 16){
 container.addEventListener("mouseover", e =>{
     const target  = e.target;
     if(e.target.matches(".column")){
-        target.style.backgroundColor = returnValue;
+        target.style.backgroundColor = prefColor.value;
     }
     //hold the shift to clear the div
     if(e.shiftKey)target.setAttribute("style", "background: rgb(189, 189, 189);");
