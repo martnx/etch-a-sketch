@@ -1,23 +1,67 @@
 const container = document.querySelector(".container");
 createGrid();
 
+//Input text code
+const inputBtn = document.querySelector(".change-btn");
+inputBtn.addEventListener("click", () =>{
+    //Getting the input value
+    const inputValue = document.querySelector(".input-size").value;
+    //Checking if the value is valid 1 - 100 only!
+    if(inputValue > 0 && inputValue <= 100){
+        createGrid(inputValue);
+    }else{
+        alert("Input valid value!");
+        createGrid();
+    }
+});
+
+//code for button here
+const changeButton = document.querySelector(".change-btn");
+changeButton.addEventListener("click", () => {
+    const inputSize = document.querySelector(".input-size").value;
+    createGrid(inputSize);
+});
+
+//Resetting all the colored div
+const resetButton = document.querySelector('.reset-btn');
+const allColumn = document.querySelectorAll(".column");
+resetButton.addEventListener("click", () =>{
+    for(const columns of allColumn){
+        columns.style.backgroundColor = "rgb(198, 198, 198)";
+    }
+});
+
 const formContainer = document.querySelector(".switchColor-container");
 const prefColor = document.querySelector(".chooseColor");
+
+//For color codeblocks || true = Picked Color false = Random Color;
 let returnColor = prefColor.value
+let colorChoose = true;
+
 prefColor.addEventListener("input", e => { //Get the value of input color
-    console.log(prefColor.value);
     pickColorRadio.checked = true;
+    
 });
 
+//Trigget the pick color radio
+const pickColorRadio = document.querySelector("#pickColorRadio");
+pickColorRadio.addEventListener("click", e =>{
+    colorChoose = true;
+    inputValue = document.querySelector(".input-size").value;
+    // createGrid(inputValue);
+});
+
+//Trigger the random radio button 
 const randomColorRadio = document.querySelector("#randomRadio");
-
 randomColorRadio.addEventListener("click", e =>{
-    console.log("random radio buttton is clicked");
-    var randomColor = Math.floor(Math.random()*16777215).toString(16);
-    returnColor = "#"+ randomColor;
-    console.log(returnColor);
+    colorChoose = false;
+    inputValue = document.querySelector(".input-size").value;
+    // createGrid(inputValue);
 });
-
+function randomColor(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return returnRandomColor = "#" + randomColor;
+}
 
 //Alert checkpoint
 // function alertInput() {
@@ -50,51 +94,24 @@ function createGrid(size = 16){
             column.className = 'column';
             row.appendChild(column);  
         }
-
-    }  
-
+    }
 }
 //Make eventlistener for each column
 container.addEventListener("mouseover", e =>{
     const target  = e.target;
     if(e.target.matches(".column")){
-        target.style.backgroundColor = prefColor.value;
+        if(colorChoose == true){
+            target.style.backgroundColor = prefColor.value;
+        }else{
+            target.style.backgroundColor = randomColor()
+        }
+        
+
     }
     //hold the shift to clear the div
     if(e.shiftKey)target.setAttribute("style", "background: rgb(189, 189, 189);");
     
 });
 
-//code for button here
-const changeButton = document.querySelector(".change-btn");
-changeButton.addEventListener("click", () => {
-    const inputSize = document.querySelector(".input-size").value;
-    createGrid(inputSize);
-});
-
-//Resetting all the colored div
-const resetButton = document.querySelector('.reset-btn');
-const allColumn = document.querySelectorAll(".column");
-resetButton.addEventListener("click", () =>{
-    for(const columns of allColumn){
-        columns.style.backgroundColor = "rgb(198, 198, 198)";
-    }
-});
-
-//Input text code
-const inputText = document.querySelector("input-size");
-const inputBtn = document.querySelector(".change-btn");
-inputBtn.addEventListener("click", () =>{
-
-    //Getting the input value
-    const inputValue = document.querySelector(".input-size").value;
-    //Checking if the value is valid 1 - 100 only!
-    if(inputValue > 0 && inputValue <= 100){
-        createGrid(inputValue);
-    }else{
-        alert("Input valid value!");
-        createGrid();
-    }
-});
 
 

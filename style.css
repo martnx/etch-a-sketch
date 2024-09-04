@@ -38,8 +38,8 @@
 }
 
 .column {
-    background-color: rgb(198, 198, 198);
-    border: 0.1px solid rgb(159, 159, 159);
+    background-color: rgb(255, 255, 255);
+    border: 0.1px solid rgb(171, 163, 163);
     flex: 1; 
 }
 
