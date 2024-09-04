@@ -112,7 +112,7 @@ container.addEventListener("mouseover", e =>{
 
     }
     //hold the shift to clear the div
-    if(e.shiftKey)target.setAttribute("style", "background: rgb(189, 189, 189);");
+    if(e.shiftKey)target.setAttribute("style", "background: rgb(255, 255, 255)");
     
 });
 
