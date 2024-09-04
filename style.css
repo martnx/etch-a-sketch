@@ -8,6 +8,8 @@
     padding: 16px;
 
     display: flex;
+    justify-content: space-around;
+    align-content: center;
     flex-direction: row-reverse;
 }
 
@@ -18,7 +20,7 @@
 }
 
 .container{
-    margin-left: auto;
+    /* margin-left: auto; */
     border: 16px solid rgb(192, 25, 25);
     height: 500px;
     width: 500px;
@@ -68,6 +70,10 @@
     padding: 8px;
 }
 
-.randomColor-container {
+.switchColor-container {
+    padding: 8px;   
+}
+
+.switchColor-container .text{
     padding: 8px;   
 }

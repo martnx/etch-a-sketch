@@ -6,6 +6,8 @@
     <title>Etch A Sketch</title>
     <!-- <script src="script.js" defer></script> -->
     <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    
 </head>
 <body>
     <div class="header">Etch-A-Sketch</div>
@@ -17,15 +19,19 @@
             <input class="input-size" type="number" value="16" min="1" max="100">
             <button class="change-btn">Change Size</button>
             <br>
-            <div class="randomColor-container">
-                <input type="checkbox" class="random-checkbox" name="randomColor"">
-                <label for="random" class="checkbox-label">Random Color</label>
-            </div>
-                <button class="reset-btn">Reset Sketchpad</button>
-                <p>You can use shift + mouse hovering to delete some colored divs.</p>
+            <button class="reset-btn">Reset Sketchpad</button>
+            <form class="switchColor-container">
+                Change color?<br>
+                <input type="radio" name="colors" id="pickColorRadio" checked="checked">
+                    <label for="pickColorRadio">Pick a Color?</label>
+                <input type="color" class="chooseColor" name="favcolor" value="#000000"><br> 
+                <input type="radio" name="colors" id="randomRadio">
+                    <label for="randomRadio">Random Color?</label>
+              </form>
+            <p>You can use shift + mouse hovering to delete some colored divs.</p>
         </div>
     </div>
     
-    <script src="script.js"></script>
+
 </body>
 </html>
