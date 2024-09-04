@@ -27,7 +27,7 @@ const resetButton = document.querySelector('.reset-btn');
 const allColumn = document.querySelectorAll(".column");
 resetButton.addEventListener("click", () =>{
     for(const columns of allColumn){
-        columns.style.backgroundColor = "rgb(198, 198, 198)";
+        columns.style.backgroundColor = "rgb(255, 255, 255)";
     }
 });
 
