@@ -40,14 +40,17 @@ let colorChoose = true;
 
 prefColor.addEventListener("input", e => { //Get the value of input color
     pickColorRadio.checked = true;
-    
+    console.log(prefColor.value);
+    // inputValue = document.querySelector(".input-size").value;
+    // createGrid(inputValue);
 });
 
 //Trigget the pick color radio
 const pickColorRadio = document.querySelector("#pickColorRadio");
 pickColorRadio.addEventListener("click", e =>{
     colorChoose = true;
-    inputValue = document.querySelector(".input-size").value;
+    returnColor = prefColor.value;
+    // inputValue = document.querySelector(".input-size").value;
     // createGrid(inputValue);
 });
 
@@ -55,7 +58,7 @@ pickColorRadio.addEventListener("click", e =>{
 const randomColorRadio = document.querySelector("#randomRadio");
 randomColorRadio.addEventListener("click", e =>{
     colorChoose = false;
-    inputValue = document.querySelector(".input-size").value;
+    // inputValue = document.querySelector(".input-size").value;
     // createGrid(inputValue);
 });
 function randomColor(){
