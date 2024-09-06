@@ -40,6 +40,7 @@ let colorChoose = true;
 
 prefColor.addEventListener("input", e => { //Get the value of input color
     pickColorRadio.checked = true;
+    colorChoose = true;
     console.log(prefColor.value);
     // inputValue = document.querySelector(".input-size").value;
     // createGrid(inputValue);
