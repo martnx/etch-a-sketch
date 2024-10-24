@@ -24,12 +24,7 @@ changeButton.addEventListener("click", () => {
 
 //Resetting all the colored div
 const resetButton = document.querySelector('.reset-btn');
-const allColumn = document.querySelectorAll(".column");
-resetButton.addEventListener("click", () =>{
-    for(const columns of allColumn){
-        columns.style.backgroundColor = "rgb(255, 255, 255)";
-    }
-});
+
 
 const formContainer = document.querySelector(".switchColor-container");
 const prefColor = document.querySelector(".chooseColor");
@@ -100,6 +95,17 @@ function createGrid(size = 16){
         }
     }
 }
+
+//function for reset
+// const allColumn = document.querySelectorAll(".column");
+resetButton.addEventListener("click", () =>{
+    const allColumn = document.querySelectorAll(".column");
+    // createGrid(inputSize);
+    for(const columns of allColumn){
+        columns.style.backgroundColor = "rgb(255, 255, 255)";
+       
+    }
+});
 //Make eventlistener for each column
 container.addEventListener("mouseover", e =>{
     const target  = e.target;
